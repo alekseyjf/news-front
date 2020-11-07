@@ -1,0 +1,57 @@
+.posts {
+    &__list{
+
+    }
+    &__item{
+        background: #fff;
+        padding: 20px 15px;
+        box-shadow: 0 5px 10px rgba(26,54,95,.05);
+
+        + .posts__item {
+            margin-top: 20px;
+        }
+    }
+}
+
+.news {
+    &__preview {
+        margin-right: 30px;
+        max-width: 400px;
+        flex: 1 0 auto;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    &__header {
+        margin-bottom: 20px;
+    }
+    &__title {
+        margin: 0;
+    }
+    &__body {}
+    &__short-description {
+
+    }
+    &__description {
+        margin: 15px 0;
+    }
+    &__tag {
+        color: #2b90ce;
+        display: inline-block;
+        &:hover {
+            color: #f64c6b;
+        }
+    }
+    &__btn {
+        margin-top: 24px;
+        display: inline-block;
+        border: none;
+        padding: 10px 40px;
+        color: #fff;
+        border-radius: 20px;
+        background: linear-gradient(to left, #5151c6, #8888f4);
+        cursor: pointer;
+    }
+}

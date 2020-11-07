@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #f2f4f8;
+}
+
+p {
+  margin: auto;
+}
+
+a {
+  color: inherit;
+  transition: .3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  min-height: 400px;
+  background: #000;
+  align-items: center;
+
+  .banner__ball {
+    img {
+      max-width: 150px;
+
+    }
+  }
+
+  .banner__ball:first-child {
+    img {
+      animation: rotate 10s linear reverse infinite;
+    }
+  }
+
+  .banner__ball:last-child {
+    img {
+      animation: rotate 10s linear infinite;
+    }
+  }
+
+
+  .banner__logo {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    background: #0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 220px;
+      border-radius: 50%;
+      border: 1px solid #000;
+
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.rounded-10 {
+  border-radius: 10px;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+
+.btn {
+  display: block;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: .3s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn_red {
+  background-color: #dc3545;
+  border-color: #dc3545;
+
+  &:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+}
+
+.btn_green {
+  background-color: #218838;
+  border-color: #1e7e34;
+
+  &:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+}
+
+.btn_blue {
+  background-color: #007bff;
+  border-color: #007bff;
+
+  &:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+}
+
+@import "Home.module";
