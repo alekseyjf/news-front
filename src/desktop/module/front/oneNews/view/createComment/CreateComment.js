@@ -8,15 +8,13 @@ const CreateComment = (props) => {
     const numbers = Numbers.getInstance();
     const {comments: propComments} = props;
     const [singleComm, setSingleComm] = useState('');
-    const [comments, setComments] = useState(propComments || [])
+    const [comments, setComments] = useState(propComments || []);
     const {newsId} = useRouter().query;
 
-    console.log(comments);
-
     const changeComment = (e) => {
-        e.persist()
+        e.persist();
         setSingleComm(e.target.value);
-    }
+    };
 
     const createComment = async () => {
         await fetch("http://localhost:5000/create-comment", {
@@ -39,12 +37,12 @@ const CreateComment = (props) => {
                 setComments(data);
                 setSingleComm('');
             }).catch(err => err);
-    }
+    };
 
     const renderCommetns = () => {
         return (
             <ul className={Styles['comments__list']}>
-                {comments.map((item) => {
+                {comments.reverse().map((item) => {
                     const date = item.dateCreate ? new Date(item.dateCreate) : null;
                     return (
                         <li key={item.dateCreate} className={`${Styles["comments__item"]} ${Styles["comment"]}`}>
@@ -72,20 +70,15 @@ const CreateComment = (props) => {
                                 </p>
                             </div>
                         </li>
-                    )
+                    );
                 })}
             </ul>
-        )
-    }
+        );
+    };
 
     return (
         <>
-            <div className={Styles['comments']}>
-                { Boolean(comments.length) && renderCommetns() }
-            </div>
             <div className={Styles['comment-form']}>
-
-
                 <textarea
                     onChange={changeComment}
                     value={singleComm}
@@ -99,8 +92,12 @@ const CreateComment = (props) => {
                     className={Styles['comment-form__btn']}
                 >Оставить комментарий</button>
             </div>
+            <div className={Styles['comments']}>
+                { Boolean(comments.length) && <p style={{marginTop: "24px"}}>{comments.length} комментариев</p> }
+                { Boolean(comments.length) && renderCommetns() }
+            </div>
         </>
-    )
-}
+    );
+};
 
 export default CreateComment;
