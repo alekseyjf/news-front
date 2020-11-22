@@ -1,9 +1,15 @@
 import React, {useState} from "react";
-import Link from "../../../../../../components/link/Link";
+import Link from "components/link/Link";
 import Styles from "../style/Main.module.scss";
 import {useRouter} from "next/router";
 
+import Numbers from "app/core/utilites/Numbers"
+
 const View = (props) => {
+  console.log(props);
+
+  const numbers = Numbers.getInstance();
+
   const [allNews, setAllNews] = useState(props.allNews)
 
   const router = useRouter();
@@ -19,11 +25,6 @@ const View = (props) => {
     });
   };
 
-  const addZeroToDate = (date) => {
-    // console.log(typeof date);
-    return String(date).padStart(2, "0")
-  };
-
   const getNews = () => {
     return (
       <ul className={Styles["posts__list"]}>
@@ -34,7 +35,7 @@ const View = (props) => {
             return (
               !!item.title && !!item.description &&
                 (
-                  <li key={item._id} className={`d-flex rounded-20 ${Styles["posts__item"]} ${Styles.news}`}>
+                  <li key={item._id} className={`d-flex rounded-20 ${Styles["posts__item"]} ${Styles["news"]}`}>
                     {item.posterSrc && (
                       <div className={Styles["news__preview"]}>
                         <img src={item.posterSrc} alt={item.title}/>
@@ -48,10 +49,10 @@ const View = (props) => {
                           <div>
                             <span>Дата создания - </span>
                             <span>{date.getFullYear()}</span>:
-                            <span>{addZeroToDate(date.getMonth() + 1)}</span>:
-                            <span>{addZeroToDate(date.getDate())}</span>{" - "}
-                            <span>{addZeroToDate(date.getHours())}</span>:
-                            <span>{addZeroToDate(date.getMinutes())}</span>
+                            <span>{numbers.addLeadingZero(date.getMonth() + 1)}</span>:
+                            <span>{numbers.addLeadingZero(date.getDate())}</span>{" - "}
+                            <span>{numbers.addLeadingZero(date.getHours())}</span>:
+                            <span>{numbers.addLeadingZero(date.getMinutes())}</span>
                           </div>
                         )}
                       </header>

@@ -1,24 +1,23 @@
 import React from "react";
 import Link from "components/link/Link";
 import Styles from "../../style/latestNews/LatestNews.module.scss";
-import {useRouter} from "next/router";
-
 
 const AllNews = (props) => {
-    const {allNews} = props;
-    const {asPath} = useRouter()
-
-    return (
+  console.log(props);
+  const {allNews} = props;
+  return (
     <>
+      {/*<h2><Link to="/">Все новости</Link></h2>*/}
+
       <div className={Styles["latest-news"]}>
         <ul className={`${Styles["latest-news__list"]} row`}>
           {allNews.map(item => {
             return (
               <div key={item._id} className="col-6">
                 <li className={Styles["latest-news__item"]}>
-                  <Link to={`${asPath}/${item._id}`} className={Styles["latest-news__preview"]}>
+                  <div className={Styles["latest-news__preview"]}>
                     <img src={item.posterSrc} alt={item.title} />
-                  </Link>
+                  </div>
                   <h3>{item.title}</h3>
                   <p>{item.shortDescription}</p>
                 </li>

@@ -1,0 +1,46 @@
+.main-news {
+    &:hover {
+        .main-news__preview {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__preview {
+        overflow: hidden;
+
+        img {
+            transition: transform .8s;
+        }
+    }
+
+    &__section {
+        padding-left: 30px;
+        h2 {
+            margin-top: 0;
+        }
+    }
+}
+.tags {
+    &__list {
+        margin-top: 20px;
+    }
+    &__item {
+        a {
+            display: block;
+            background: linear-gradient(270deg,#ff2882,#963cff);
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 15px;
+
+            &:hover {
+                background: linear-gradient(270deg,#963cff,#ff2882);
+            }
+        }
+
+        + .tags__item {
+            margin-left: 20px;
+        }
+    }
+}

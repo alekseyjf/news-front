@@ -1,33 +1,19 @@
-class League {
+class OneNews {
   constructor(props) {
     this.NewsService = props.dependencies.NewsService;
   }
 
   /**
    * @public
-   * @method getMainNews
+   * @method getOneNews
    * @return {Promise}
    */
-  getMainNews(resultContainer){
+  getOneNews(resultContainer){
     return new Promise((resolve) => {
-      this.NewsService.getMainNews((mainNews) => {
-        console.log(mainNews);
-        resultContainer.mainNews = mainNews;
-
-        resolve();
-      }, resolve);
-    });
-  }
-
-  /**
-   * @public
-   * @method getMainNews
-   * @return {Promise}
-   */
-  getLatestNews(resultContainer){
-    return new Promise((resolve) => {
-      this.NewsService.getLatestNews((latestNews) => {
-        resultContainer.latestNews = latestNews;
+      this.NewsService.getOneNews(
+      resultContainer.url,
+      (oneNews) => {
+        resultContainer.oneNews = oneNews;
 
         resolve();
       }, resolve);
@@ -39,15 +25,16 @@ class League {
    * @method getInitialProps
    * @return {Promise}
    */
-  getInitialProps() {
+  getInitialProps(ctx) {
+    const {newsId, league} = ctx.query;
+    console.log(ctx.query);
     let result = {
-      mainNews: {},
-      latestNews: []
+      url: `http://localhost:5000/admin/${league}/news/edit/${newsId}`,
+      oneNews: []
     };
 
     return Promise.all([
-      this.getMainNews(result),
-      this.getLatestNews(result)
+      this.getOneNews(result)
     ])
     .then((data) => result)
     .catch(() => result);
@@ -74,4 +61,4 @@ class League {
   }
 }
 
-export default League;
+export default OneNews;

@@ -7,8 +7,8 @@ import AllNews from "./allNews/AllNews";
 
 const View = (props) => {
   const {allNews} = props;
-
-  return (
+    console.log(props);
+    return (
     <div>
       {/*<Banner />*/}
       <Header />

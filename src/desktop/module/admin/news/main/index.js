@@ -16,12 +16,12 @@ export default {
   getView(props) {
     return <View {...props} />;
   },
-  getInitialProps(...props) {
+  /*getInitialProps(...props) {
     return this.getServerSideProps(...props);
   },
   getStaticProps(...props) {
     return this.getInitialProps(...props);
-  },
+  },*/
   getServerSideProps(...props) {
     return news.getInitialProps(...props);
   },

@@ -41,6 +41,17 @@ class Repository {
       success(data);
     }, error);
   }
+
+  getOneNews(
+    url,
+    success = () => {},
+    error = () => {}
+  ) {
+    this.HttpClient.get(url)
+    .then((data) => {
+      success(data);
+    }, error);
+  }
 }
 
 export default Repository;

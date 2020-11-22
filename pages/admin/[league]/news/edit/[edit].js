@@ -1,10 +1,8 @@
 import React from "react";
 
-import { useRouter } from 'next/router'
-
 import AdminLayout from "desktop/layouts/admin/layout"
-import Link from "../../../../../src/components/link/Link";
-import CreateNews from "../../../../../src/desktop/module/admin/news/create";
+import Link from "components/link/Link";
+import CreateNews from "desktop/module/admin/news/create";
 
 const EditNews = (props) => {
   const getView = () => {
@@ -20,9 +18,7 @@ const EditNews = (props) => {
 };
 
 EditNews.getInitialProps = async (ctx, props) => {
-  const edit = ctx.query.edit;
-  const league = ctx.query.league;
-  console.log(`http://localhost:5000/admin/${league}/news/edit/${edit}`);
+  const {edit, league} = ctx.query;
   const res = await fetch(`http://localhost:5000/admin/${league}/news/edit/${edit}`);
   const editNews = await res.json();
 

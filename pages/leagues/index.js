@@ -3,15 +3,10 @@ import {withRouter} from "next/router";
 import LeagueModule from "desktop/module/front/league"
 
 class Leagues extends React.Component {
-  constructor(props) {
-    super(props);
-    this.LeagueModule = LeagueModule
-  }
-
   render() {
     return (
       <div>
-        {this.LeagueModule.getView(this.props)}
+        {LeagueModule.getView(this.props)}
       </div>
     )
   }

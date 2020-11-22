@@ -9,8 +9,9 @@ import LatestNews from "./latestNews/LatestNews";
 const View = (props) => {
   const {mainNews} = props;
   const {latestNews} = props;
+    console.log(props);
 
-  return (
+    return (
     <div>
       <Banner />
       <Header />

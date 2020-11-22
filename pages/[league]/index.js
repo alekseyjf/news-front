@@ -5,8 +5,6 @@ import LeagueModule from "desktop/module/front/league"
 class Leagues extends React.Component {
   constructor(props) {
     super(props);
-    console.log(111, props, 111);
-    // console.log(this.props.router.query);
     this.LeagueModule = LeagueModule
   }
 

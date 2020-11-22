@@ -1,0 +1,99 @@
+import React from "react";
+import Styles from "../../style/body/Body.module.scss";
+
+const Aside = () => {
+  return (
+    <table className={Styles.table}>
+      <thead>
+      <tr>
+        <th>№</th>
+        <th>Название клуба</th>
+        <th>Игры</th>
+        <th>Очки</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>МЮ</td>
+        <td>10</td>
+        <td>20</td>
+      </tr>
+      </tbody>
+    </table>
+  )
+}
+
+export default Aside;

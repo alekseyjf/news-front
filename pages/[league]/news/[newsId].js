@@ -1,9 +1,9 @@
 import React from "react";
 
 import AdminLayout from "desktop/layouts/admin/layout"
-import NewsModule from "desktop/module/admin/news/main"
+import NewsModule from "desktop/module/front/oneNews"
 
-const News = (props) => {
+const NewsId = (props) => {
   console.log(props);
   const getView = () => {
     return NewsModule.getView(props);
@@ -12,13 +12,13 @@ const News = (props) => {
 
   return (
     <div>
-      Front
+      {getView()}
     </div>
   )
 };
 
-News.getInitialProps = async (ctx, props) => {
+NewsId.getInitialProps = async (ctx, props) => {
   return NewsModule.getServerSideProps(ctx, props);
 };
 
-export default News;
+export default NewsId;
