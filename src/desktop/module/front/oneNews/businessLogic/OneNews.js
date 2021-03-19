@@ -27,7 +27,7 @@ class OneNews {
    */
   getInitialProps(ctx) {
     const {newsId, league} = ctx.query;
-    console.log(ctx.query);
+
     let result = {
       url: `http://localhost:5000/admin/${league}/news/edit/${newsId}`,
       oneNews: []

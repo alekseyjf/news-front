@@ -7,7 +7,6 @@ import AllNews from "./allNews/AllNews";
 
 const View = (props) => {
   const {allNews} = props;
-    console.log(props);
     return (
     <div>
       {/*<Banner />*/}

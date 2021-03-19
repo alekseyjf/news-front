@@ -4,7 +4,11 @@ import Link from "components/link/Link";
 
 const MainNews = (props) => {
     const {mainNews} = props;
-    console.log(props);
+
+    if(!mainNews) {
+        return <>Главная новость не выбрана</>
+    }
+
     return (
         <div className={`${Styles["main-news"]} d-flex`}>
             <div className={Styles["main-news__preview"]}>

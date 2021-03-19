@@ -11,7 +11,6 @@ class League {
   getMainNews(resultContainer){
     return new Promise((resolve) => {
       this.NewsService.getMainNews((mainNews) => {
-        console.log(mainNews);
         resultContainer.mainNews = mainNews;
 
         resolve();
@@ -65,8 +64,6 @@ class League {
    * }}
    */
   normalizeInitialProps(initialData, pageInfo) {
-    console.log(initialData, pageInfo);
-
     return {
       initialData,
       pageInfo

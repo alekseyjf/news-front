@@ -5,7 +5,8 @@ import { useRouter } from 'next/router'
 
 const MyApp = (props) => {
   let { Component, hasError, pageProps, pageInfo } = props;
-  return (
+    console.log(props);
+    return (
     <>
       <Head>
         <title>Create Next App</title>

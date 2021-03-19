@@ -11,8 +11,6 @@ const CreateComment = (props) => {
     const [comments, setComments] = useState(propComments || [])
     const {newsId} = useRouter().query;
 
-    console.log(comments);
-
     const changeComment = (e) => {
         e.persist()
         setSingleComm(e.target.value);
@@ -52,6 +50,7 @@ const CreateComment = (props) => {
                                 <div className={Styles['comment__name']}>
                                     Имя Фамилия
                                 </div>
+
                                 <div className={Styles['comment__date']}>
                                     {
                                         date && (
@@ -66,6 +65,7 @@ const CreateComment = (props) => {
                                         )}
                                 </div>
                             </header>
+
                             <div className={Styles['comment__body']}>
                                 <p className={Styles.comment__text}>
                                     {item.text}
@@ -83,9 +83,8 @@ const CreateComment = (props) => {
             <div className={Styles['comments']}>
                 { Boolean(comments.length) && renderCommetns() }
             </div>
+
             <div className={Styles['comment-form']}>
-
-
                 <textarea
                     onChange={changeComment}
                     value={singleComm}
@@ -94,6 +93,7 @@ const CreateComment = (props) => {
                     id="comment"
                     placeholder="write some comment"
                 />
+
                 <button
                     onClick={createComment}
                     className={Styles['comment-form__btn']}

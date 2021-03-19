@@ -3,7 +3,6 @@ import Link from "components/link/Link";
 import Styles from "../../style/latestNews/LatestNews.module.scss";
 
 const AllNews = (props) => {
-  console.log(props);
   const {allNews} = props;
   return (
     <>

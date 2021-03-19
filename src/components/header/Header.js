@@ -9,7 +9,7 @@ const Header = (props) => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <menu className={Styles.menu}>
+              <menu className={`${Styles.menu} d-flex align-items-center justify-content-between`}>
               <ul className={`${Styles["menu__list"]} d-flex align-items-center`}>
                 <li className={Styles["menu__item"]}>
                   <Link to={"/"}>Новости</Link>
@@ -24,6 +24,11 @@ const Header = (props) => {
                   <Link to={"/"}>список бомбардиров</Link>
                 </li>
               </ul>
+
+              <div className="auth">
+                <a href="/login">login</a>
+                <a href="/signin">signin</a>
+              </div>
             </menu>
           </div>
         </div>

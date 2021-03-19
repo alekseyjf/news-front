@@ -4,7 +4,6 @@ import AdminLayout from "desktop/layouts/admin/layout"
 import NewsModule from "desktop/module/front/oneNews"
 
 const NewsId = (props) => {
-  console.log(props);
   const getView = () => {
     return NewsModule.getView(props);
     // NewsModule.normalizeInitialProps()

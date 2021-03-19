@@ -6,8 +6,6 @@ import {useRouter} from "next/router";
 import Numbers from "app/core/utilites/Numbers"
 
 const View = (props) => {
-  console.log(props);
-
   const numbers = Numbers.getInstance();
 
   const [allNews, setAllNews] = useState(props.allNews)
