@@ -1,4 +1,5 @@
-import HttpClient from "app/core/utilites/httpClient";
+import HttpClient from "core/utilites/httpClient";
+import Env from "core/env";
 
 import Repository from "./repository/Repository";
 import News from "./News";
@@ -10,16 +11,16 @@ let news = new News({
         HttpClient: HttpClient.getInstance(),
         urls: {
           getMainNews: {
-            url: "http://localhost:5000/main-news",
+            url: Env.getInstance().getServerHost() + "/main-news",
             // domain: "",
             // path: "/api",
             // query: {}
           },
           getLatestNews: {
-            url: "http://localhost:5000/get-latest-news/4"
+            url: Env.getInstance().getServerHost() + "/get-latest-news/4"
           },
           getAllNews: {
-            url: "http://localhost:5000/get-all-news"
+            url: Env.getInstance().getServerHost() + "/get-all-news"
           }
         }
       }

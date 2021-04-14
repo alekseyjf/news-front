@@ -1,7 +1,7 @@
 import React from "react";
 import View from "./view/View";
 import League from "./businessLogic/AllNews";
-import NewsService from "app/core/services/news";
+import NewsService from "core/services/news";
 
 import "./style/Legue.module.scss";
 

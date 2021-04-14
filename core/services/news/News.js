@@ -38,6 +38,7 @@ class News {
   /**
    * @public
    * @method getOneNews
+   * @param url {string}
    * @param success {Function}
    * @param error {Function}
    * @returns {Repository}
@@ -50,6 +51,13 @@ class News {
     return this;
   }
 
+  /**
+   * @public
+   * @method getLatestNews
+   * @param success {Function}
+   * @param error {Function}
+   * @returns {Repository}
+   */
   getLatestNews(success, error) {
     if (_.isFunction(success) && _.isFunction(error)) {
       this.Repository.getLatestNews(success, error);

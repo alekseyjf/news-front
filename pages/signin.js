@@ -1,16 +1,16 @@
 import React from "react";
-// import AdminComponent from "../src/desktop/module/admin/news/edit/index";
+import SigninModule from "desktop/module/front/signin"
 
 const Signin = (props) => {
     return (
         <>
-
+          {SigninModule.getView(props)}
         </>
     )
 };
 
-/*Signin.getInitialProps = (ctx, props) => {
-  return AdminComponent.getServerSideProps(ctx, props);
-};*/
+Signin.getInitialProps = (ctx, props) => {
+  return SigninModule.getServerSideProps(ctx, props);
+};
 
 export default Signin;

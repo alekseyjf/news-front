@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
+
+import Env from 'core/env'
 import Styles from "../../style/createComment/CreateComment.module.scss";
 import {useRouter} from "next/router";
 
-import Numbers from "app/core/utilites/Numbers"
+import Numbers from "core/utilites/Numbers"
 
 const CreateComment = (props) => {
     const numbers = Numbers.getInstance();
@@ -17,7 +19,7 @@ const CreateComment = (props) => {
     };
 
     const createComment = async () => {
-        await fetch("http://localhost:5000/create-comment", {
+        await fetch(Env.getInstance().getServerHost() + "/create-comment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

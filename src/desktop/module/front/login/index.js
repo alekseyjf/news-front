@@ -1,19 +1,21 @@
 import React from "react";
+
+
+import AuthService from "core/services/auth"
 import View from "./view/View";
-import League from "./businessLogic/OneNews";
-import NewsService from "core/services/news";
+import Login from "./businessLogic/Login";
 
-// import "./style/OneNews.module.scss";
+// import "./style/Login.module.scss";
 
-let league = new League({
+let login = new Login({
   dependencies: {
-    NewsService: NewsService.getInstance()
+    AuthService: AuthService.getInstance()
   }
 });
 
 export default {
   getView(props) {
-    return <View {...props} />;
+    return <View {...props} model={login} />;
   },
   /*getInitialProps(...args) {
     return this.getServerSideProps(...args);
@@ -22,9 +24,9 @@ export default {
     return this.getInitialProps(...args);
   },*/
   getServerSideProps(...args) {
-    return league.getInitialProps(...args);
+    return login.getInitialProps(...args);
   },
   normalizeInitialProps(...args) {
-    return league.normalizeInitialProps(...args);
+    return login.normalizeInitialProps(...args);
   }
 };

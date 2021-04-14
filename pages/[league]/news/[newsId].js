@@ -1,6 +1,5 @@
 import React from "react";
 
-import AdminLayout from "desktop/layouts/admin/layout"
 import NewsModule from "desktop/module/front/oneNews"
 
 const NewsId = (props) => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import NewsService from "app/core/services/news";
+import NewsService from "core/services/news";
 
 import View from "./view/View";
 import League from "./businessLogic/League";

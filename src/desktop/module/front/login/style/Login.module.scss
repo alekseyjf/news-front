@@ -1,0 +1,23 @@
+.form-auth {
+    margin: auto;
+    height: 100vh;
+
+    .form-auth__title {
+        margin-bottom: 16px;
+    }
+
+    .form-auth__container {
+        border-radius: 10px;
+        border: 2px solid rgba(#000, .3);
+        background: rgba(#000, .2);
+        padding: 24px;
+    }
+
+    .form-auth__field + .form-auth__field {
+        margin-top: 15px;
+    }
+
+    .form-auth__submit {
+        margin-top: 32px;
+    }
+}

@@ -3,7 +3,7 @@ import Link from "components/link/Link";
 import Styles from "../style/Main.module.scss";
 import {useRouter} from "next/router";
 
-import Numbers from "app/core/utilites/Numbers"
+import Numbers from "core/utilites/Numbers"
 
 const View = (props) => {
   const numbers = Numbers.getInstance();
