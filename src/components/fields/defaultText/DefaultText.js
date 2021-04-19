@@ -2,7 +2,16 @@ import React from 'react';
 
 import Style from './style/default-text.module.scss'
 
-const DefaultText = ({onChange, value, name, label, type='text', className}) => {
+const DefaultText = ({
+  onChange,
+  value,
+  name,
+  label,
+  type='text',
+  className,
+  placeholder,
+  required
+}) => {
   return (
     <label className={`${className} d-flex flex-column`}>
       <span>{label}</span>
@@ -11,7 +20,9 @@ const DefaultText = ({onChange, value, name, label, type='text', className}) => 
         value={value}
         className={Style['inp']}
         type={type}
-        name={name} />
+        name={name}
+        required={required}
+      />
     </label>
   )
 };

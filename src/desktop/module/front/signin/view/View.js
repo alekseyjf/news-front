@@ -26,7 +26,7 @@ const View = ({model}) => {
   return (
     <>
       <Header />
-      <div className={`${Style['form-auth']} d-flex flex-column justify-content-center align-items-center`}>
+      <form className={`${Style['form-auth']} d-flex flex-column justify-content-center align-items-center`}>
         <div className={`${Style['form-auth__container']} d-flex align-item-center justify-content-center flex-column`}>
           <h2 onClick={() => {console.log(123)}} className={Style['form-auth__title']}>Войти</h2>
 
@@ -36,6 +36,7 @@ const View = ({model}) => {
             className={Style['form-auth__field']}
             name='name'
             label='Введите имя'
+            required={true}
           />
 
           <DefaultText
@@ -44,6 +45,8 @@ const View = ({model}) => {
             className={Style['form-auth__field']}
             name='email'
             label='Введите почту'
+            required={true}
+            type={'email'}
           />
 
           <DefaultText
@@ -53,11 +56,12 @@ const View = ({model}) => {
             name='password'
             type='password'
             label='Введите пароль'
+            required={true}
           />
 
           <button type='button' onClick={signin} className={`${Style['form-auth__submit']} btn btn_md btn_blue`}>Войти</button>
         </div>
-      </div>
+      </form>
     </>
   );
 };

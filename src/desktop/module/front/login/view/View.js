@@ -37,6 +37,7 @@ const View = ({model}) => {
             className={Style['form-auth__field']}
             name='name'
             label='Введите имя'
+            required={true}
           />
 
           <DefaultText
@@ -45,6 +46,8 @@ const View = ({model}) => {
             className={Style['form-auth__field']}
             name='email'
             label='Введите почту'
+            required={true}
+            type={'email'}
           />
 
           <DefaultText
@@ -54,6 +57,7 @@ const View = ({model}) => {
             name='password'
             type='password'
             label='Введите пароль'
+            required={true}
           />
 
           <button type='button' onClick={login} className={`${Style['form-auth__submit']} btn btn_md btn_blue`}>Войти</button>
