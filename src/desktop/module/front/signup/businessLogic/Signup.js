@@ -1,11 +1,11 @@
-class Login {
+class Signup {
   constructor(props) {
     this.AuthService = props.dependencies.AuthService;
   }
 
-  login(dataBody) {
+  signup(dataBody) {
     return new Promise((resolve) => {
-      this.AuthService.login(dataBody, (data) => {
+      this.AuthService.signup(dataBody, (data) => {
         console.log(data);
         // resultContainer.allNews = allNews;
 
@@ -55,4 +55,4 @@ class Login {
   }
 }
 
-export default Login;
+export default Signup;

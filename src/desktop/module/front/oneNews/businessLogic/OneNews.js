@@ -1,6 +1,7 @@
 class OneNews {
   constructor(props) {
     this.NewsService = props.dependencies.NewsService;
+    this.LocalStorage = props.dependencies.LocalStorage;
   }
 
   /**

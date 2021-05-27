@@ -3,11 +3,11 @@ import React from "react";
 
 import AuthService from "core/services/auth"
 import View from "./view/View";
-import Login from "./businessLogic/Login";
+import Signup from "./businessLogic/Signup";
 
-// import "./style/Login.module.scss";
+// import "./style/Signup.module.scss";
 
-let login = new Login({
+let signup = new Signup({
   dependencies: {
     AuthService: AuthService.getInstance()
   }
@@ -15,7 +15,7 @@ let login = new Login({
 
 export default {
   getView(props) {
-    return <View {...props} model={login} />;
+    return <View {...props} model={signup} />;
   },
   /*getInitialProps(...args) {
     return this.getServerSideProps(...args);
@@ -24,9 +24,9 @@ export default {
     return this.getInitialProps(...args);
   },*/
   getServerSideProps(...args) {
-    return login.getInitialProps(...args);
+    return signup.getInitialProps(...args);
   },
   normalizeInitialProps(...args) {
-    return login.normalizeInitialProps(...args);
+    return signup.normalizeInitialProps(...args);
   }
 };

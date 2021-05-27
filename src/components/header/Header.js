@@ -26,7 +26,7 @@ const Header = (props) => {
               </ul>
 
               <div className="auth">
-                <a href="/login">login</a>
+                <a href="/signup">signup</a>
                 <a href="/signin">signin</a>
               </div>
             </menu>

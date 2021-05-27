@@ -5,12 +5,12 @@ class Repository {
     this.urls = props.dependencies.urls;
   }
 
-  login(
+  signup(
     dataBody,
     success = () => {},
     error = () => {}
   ) {
-    this.HttpClient.post(this.urls.login.url, dataBody)
+    this.HttpClient.post(this.urls.signup.url, dataBody)
     .then((data) => {
       success(data);
     }, error);
@@ -22,6 +22,30 @@ class Repository {
     error = () => {}
   ) {
     this.HttpClient.post(this.urls.signin.url, dataBody)
+    .then((data) => {
+      success(data);
+    }, error);
+  }
+
+  accessToken(
+    dataBody,
+    token,
+    success = () => {},
+    error = () => {}
+  ) {
+    this.HttpClient.post(this.urls.accessToken.url, dataBody, token)
+    .then((data) => {
+      success(data);
+    }, error);
+  }
+
+  logout(
+    dataBody,
+    token,
+    success = () => {},
+    error = () => {}
+  ) {
+    this.HttpClient.post(this.urls.logout.url, dataBody, token)
     .then((data) => {
       success(data);
     }, error);

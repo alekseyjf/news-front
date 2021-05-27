@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Header from "components/header/Header";
 import DefaultText from 'components/fields/defaultText/DefaultText';
 
-import Style from '../style/Login.module.scss';
+import Style from '../style/Signup.module.scss';
 
 const View = ({model}) => {
   const [state, setState] = useState({
@@ -16,10 +16,10 @@ const View = ({model}) => {
     setState(oldState => ({...oldState, [e.target.name]: e.target.value}));
   };
 
-  const login = () => {
+  const signup = () => {
     console.log(model);
     window.model = model;
-    model.login(state).then(data => {
+    model.signup(state).then(data => {
       console.log('data', data);
     });
   };
@@ -60,7 +60,7 @@ const View = ({model}) => {
             required={true}
           />
 
-          <button type='button' onClick={login} className={`${Style['form-auth__submit']} btn btn_md btn_blue`}>Войти</button>
+          <button type='button' onClick={signup} className={`${Style['form-auth__submit']} btn btn_md btn_blue`}>Войти</button>
         </div>
       </div>
     </>

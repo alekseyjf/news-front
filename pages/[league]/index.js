@@ -22,6 +22,7 @@ class Leagues extends React.Component {
 }
 
 Leagues.getInitialProps = async (ctx, props) => {
+  console.log(props);
   return LeagueModule.getServerSideProps(ctx, props)
 };
 

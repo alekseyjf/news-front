@@ -7,8 +7,8 @@ import CreateComment from "./createComment/CreateComment";
 import Link from "components/link/Link";
 
 const View = (props) => {
-    const {oneNews} = props;
-    const {comments} = oneNews
+    const {oneNews, oneNewsModel} = props;
+    const {comments} = oneNews;
     return (
         <div>
             <Header/>
@@ -20,7 +20,7 @@ const View = (props) => {
                     <div className="col-10">
                         <Link to="/england/news/" className="btn btn_green">Go to news</Link>
                         <SingleNews oneNews={oneNews}/>
-                        <CreateComment comments={comments}/>
+                        <CreateComment oneNewsModel={oneNewsModel} comments={comments}/>
                     </div>
                 </div>
             </div>

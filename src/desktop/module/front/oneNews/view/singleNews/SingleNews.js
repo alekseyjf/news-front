@@ -13,7 +13,7 @@ const SingleNews = (props) => {
             <section className={Styles["main-news__section"]}>
                 <h2>{oneNews.title}</h2>
                 <p>{oneNews.description}</p>
-                {oneNews.tags.length && (
+                {oneNews.tags && oneNews.tags.length && (
                     <div className={`${Styles["main-news__tags"]} ${Styles["tags"]}`}>
                         <ul className={`${Styles["tags__list"]} d-flex`}>
                             {oneNews.tags.map(tag => {

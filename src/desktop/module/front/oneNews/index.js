@@ -1,19 +1,22 @@
 import React from "react";
+import LocalStorage from "core/utilites/localStorage";
+
 import View from "./view/View";
-import League from "./businessLogic/OneNews";
+import OneNews from "./businessLogic/OneNews";
 import NewsService from "core/services/news";
 
 // import "./style/OneNews.module.scss";
 
-let league = new League({
+let oneNews = new OneNews({
   dependencies: {
-    NewsService: NewsService.getInstance()
+    NewsService: NewsService.getInstance(),
+    LocalStorage: LocalStorage.getInstance()
   }
 });
 
 export default {
   getView(props) {
-    return <View {...props} />;
+    return <View {...props} oneNewsModel={oneNews} />;
   },
   /*getInitialProps(...args) {
     return this.getServerSideProps(...args);
@@ -22,9 +25,9 @@ export default {
     return this.getInitialProps(...args);
   },*/
   getServerSideProps(...args) {
-    return league.getInitialProps(...args);
+    return oneNews.getInitialProps(...args);
   },
   normalizeInitialProps(...args) {
-    return league.normalizeInitialProps(...args);
+    return oneNews.normalizeInitialProps(...args);
   }
 };

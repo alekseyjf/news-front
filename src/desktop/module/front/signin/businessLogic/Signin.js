@@ -1,6 +1,7 @@
 class Signin {
   constructor(props) {
     this.AuthService = props.dependencies.AuthService;
+    this.LocalStorage = props.dependencies.LocalStorage;
   }
 
   signin(dataBody) {
@@ -8,6 +9,11 @@ class Signin {
       this.AuthService.signin(dataBody, (data) => {
         console.log('response data', data);
         // resultContainer.allNews = allNews;
+
+        const {accessToken, refreshToken} = data;
+
+        this.LocalStorage.setItem('accessToken', accessToken);
+        this.LocalStorage.setItem('refreshToken', refreshToken);
 
         resolve(data);
       }, resolve);

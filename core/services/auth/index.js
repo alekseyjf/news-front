@@ -10,14 +10,26 @@ let auth = new Auth({
       dependencies: {
         HttpClient: HttpClient.getInstance(),
         urls: {
-          login: {
-            url: Env.getInstance().getServerHost() + "/login",
+          signup: {
+            url: Env.getInstance().getServerHost() + "/signup",
             // domain: "",
             // path: "/api",
             // query: {}
           },
           signin: {
             url: Env.getInstance().getServerHost() + "/signin",
+            // domain: "",
+            // path: "/api",
+            // query: {}
+          },
+          accessToken: {
+            url: Env.getInstance().getServerHost() + "/accessToken",
+            // domain: "",
+            // path: "/api",
+            // query: {}
+          },
+          logout: {
+            url: Env.getInstance().getServerHost() + "/logout",
             // domain: "",
             // path: "/api",
             // query: {}

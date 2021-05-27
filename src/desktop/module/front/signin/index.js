@@ -1,4 +1,5 @@
 import React from "react";
+import LocalStorage from "core/utilites/localStorage";
 
 
 import AuthService from "core/services/auth"
@@ -9,7 +10,8 @@ import Signin from "./businessLogic/Signin";
 
 let signin = new Signin({
   dependencies: {
-    AuthService: AuthService.getInstance()
+    AuthService: AuthService.getInstance(),
+    LocalStorage: LocalStorage.getInstance()
   }
 });
 
